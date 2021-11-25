@@ -4,7 +4,7 @@ import AddTodo from "./components/AddTodo";
 import TodoItem from "./components/TodoItem";
 
 const App = () => {
-  const [toDo, setTodo] = useState([
+  const [toDo, setToDo] = useState([
     {
       id: "1",
       title: "Learn React Native",
@@ -18,13 +18,14 @@ const App = () => {
   ]);
 
   const renderTodo = ({ item }) => <TodoItem todoData={item} />;
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.listContainer}>
         <Text style={styles.title}>Yapılacaklar: 0</Text>
         <FlatList data={toDo} renderItem={renderTodo} />
       </View>
-      <AddTodo />
+      <AddTodo toDo={toDo} setToDo={setToDo} />
     </SafeAreaView>
   );
 };
