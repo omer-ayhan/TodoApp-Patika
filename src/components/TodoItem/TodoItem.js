@@ -13,10 +13,13 @@ const TodoItem = ({ todo, todoData, setToDo }) => {
     );
     setIsCompleted(!isCompleted);
   };
+  const handleDelete = () =>
+    setToDo(todo.filter((item) => item.id !== todoData.id));
   return (
     <TouchableOpacity
       style={[styles.container, isCompleted && styles.containerCompleted]}
-      onPress={handleComplete}>
+      onPress={handleComplete}
+      onLongPress={handleDelete}>
       <Text style={[styles.title, isCompleted && styles.titleCompleted]}>
         {todoData.title}
       </Text>
