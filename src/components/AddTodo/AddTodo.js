@@ -26,7 +26,10 @@ const AddTodo = ({ setToDo, toDo }) => {
         value={inputText}
         onChangeText={setInputText}
       />
-      <TouchableOpacity style={styles.button} onPress={handleTodo}>
+      <TouchableOpacity
+        style={[styles.button, !inputText && { backgroundColor: "#808080" }]}
+        onPress={handleTodo}
+        disabled={!inputText}>
         <Text style={styles.buttonText}>Kaydet</Text>
       </TouchableOpacity>
     </View>
