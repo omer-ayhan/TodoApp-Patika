@@ -4,25 +4,17 @@ import AddTodo from "./components/AddTodo";
 import TodoItem from "./components/TodoItem";
 
 const App = () => {
-  const [toDo, setToDo] = useState([
-    {
-      id: "1",
-      title: "Learn React Native",
-      completed: false,
-    },
-    {
-      id: "2",
-      title: "Throw out the trash",
-      completed: false,
-    },
-  ]);
+  const [toDo, setToDo] = useState([]);
 
-  const renderTodo = ({ item }) => <TodoItem todoData={item} />;
+  const renderTodo = ({ item }) => (
+    <TodoItem setToDo={setToDo} todo={toDo} todoData={item} />
+  );
+  const toDoLength = toDo.filter((todo) => !todo.completed).length;
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.listContainer}>
-        <Text style={styles.title}>Yapılacaklar: 0</Text>
+        <Text style={styles.title}>Yapılacaklar: {toDoLength}</Text>
         <FlatList data={toDo} renderItem={renderTodo} />
       </View>
       <AddTodo toDo={toDo} setToDo={setToDo} />

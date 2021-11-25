@@ -12,6 +12,13 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
   },
+  containerCompleted: {
+    backgroundColor: "#808080",
+  },
+  titleCompleted: {
+    color: "#fff",
+    textDecorationLine: "line-through",
+  },
 });
 
 export default styles;
