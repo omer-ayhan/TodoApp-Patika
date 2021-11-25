@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Text, TouchableOpacity } from "react-native";
 import styles from "./TodoItem.style";
 
@@ -24,4 +24,4 @@ const TodoItem = ({ todo, todoData, setToDo }) => {
   );
 };
 
-export default TodoItem;
+export default memo(TodoItem);

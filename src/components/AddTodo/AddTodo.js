@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import styles from "./AddTodo.style";
 
@@ -36,4 +36,4 @@ const AddTodo = ({ setToDo, toDo }) => {
   );
 };
 
-export default AddTodo;
+export default memo(AddTodo);
