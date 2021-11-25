@@ -1,6 +1,6 @@
 # TODO App React Native
 
-<img src="https://i.hizliresim.com/in4pi8e.gif" width="350" height="650"  />
+<img src="https://i.hizliresim.com/cf0jhon.gif" width="350" height="650"  />
 
 ## Installation
 
